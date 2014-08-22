@@ -142,7 +142,7 @@ textarea {
    /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
    -webkit-align-content: flex-end;
    align-content: flex-end;
-
+  
 }
 
 .wrap { 
@@ -186,9 +186,59 @@ textarea {
   max-width: 100%;
 }
 
-li .flex-item{
+li.flex-item{
   border: none;
+  position: relative;
 }
+/*-----------------------hide product description-----------------*/
+
+.flex-item span{
+
+  height: 0em;
+  width: 0em;
+  margin-top: -16em;
+  position: absolute;
+  z-index: 1000;
+  /*outline: 1px red solid;*/
+  background-color: rgba(0,0,0, 0.7);
+  opacity: 0;
+  color: white;
+  overflow: hidden;
+  transition: height 2s ease, width 2s ease, opacity 2s ease;
+  text-indent: 1.5em;
+  line-height: 100%;
+
+}
+
+h2{
+  /*display: none;*/
+/*  text-indent: 1.1em;
+  margin-top: 2em;
+  font-size: 1.3em;*/
+}
+p{
+  /*display: none;*/
+/*  text-indent: 1.5em;
+  margin-top: -1em;*/
+}
+/*-----------------------show product description-----------------*/
+
+.flex-item span.show{
+
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+/*
+h2.show{
+  text-indent: 1.1em;
+  margin-top: 2em;
+  font-size: 1.3em;
+}
+p.show{
+  text-indent: 1.5em;
+  margin-top: -1em;
+}*/
 
 
 /*-----------------------nav bar-----------------*/
@@ -199,11 +249,15 @@ li .flex-item{
     position: absolute;
     height: 4em;
     margin-top: -8em;
+    
 }
 /*-----------------------brand-----------------*/
+
+.flex-brand li{
+  list-style-type: none;
+}
 .flex-brand{
-    text-decoration: none;
-    list-style-type: none;
+
    display: -webkit-flex;
    display: flex;
    -webkit-align-items: center;
@@ -312,12 +366,6 @@ li .flex-item{
 .cd-select {
     border: 1px solid #ddd;
 }
-
-
-
-
-
-
 
 
 
